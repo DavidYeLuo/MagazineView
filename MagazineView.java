@@ -1,5 +1,14 @@
 import javax.swing.*;
 
+/*
+ *           BorderLayout
+ * -----------------------------------
+ * - Label   TextField   Button      -
+ * -         TextArea                -
+ * - Delete  Textfield   DeleteAll   -
+ * -----------------------------------                           
+ */
+
 public class MagazineView
 {
 	public static void main(String[] args)
@@ -7,7 +16,7 @@ public class MagazineView
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.getContentPane().add(new MagazinePanel());
+		frame.getContentPane().add(new MagazineViewPanel());
 		frame.pack();
 		frame.setVisible(true);
 	}
