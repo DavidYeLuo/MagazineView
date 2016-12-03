@@ -3,7 +3,6 @@
 //
 //  Represents a collection of magazines.
 //*******************************************************************
-
 public class MagazineList
 {
    private MagazineNode list;
@@ -22,7 +21,6 @@ public class MagazineList
    //----------------------------------------------------------------
    public void add (Magazine mag)
    {
-
       MagazineNode node = new MagazineNode (mag);
       MagazineNode current;
 
@@ -39,7 +37,6 @@ public class MagazineList
    
    public void insert(Magazine m)
    {
-	   // step 1
 	   MagazineNode copy = list;
 	   list = new MagazineNode(m);
 	   list.next = copy;
@@ -47,41 +44,43 @@ public class MagazineList
    
    public void delete(Magazine m)
    {
-	   System.out.println("Delete pressed");
 	   if(list == null)
 	   {
 		   System.out.println("Magazine is empty");
 	   }
 	   else
-	   { // problem trying to figure out how to delete
+	   {
 		   MagazineNode current = list;
 		   MagazineNode future = list.next;
-		   if(current.magazine.equals(m))
+		   // When the head node should be deleted
+		   if(current.magazine.equals(m))  
 		   {
 			   list = current.next;
 			   return;
 		   }
+		   // Try to find the magazine
 		   while(future != null)
 		   {
 			   if(future.magazine.equals(m))
 			   {
 				   current.next = future.next;
+				   return;
 			   }
-			   else 
+			   else // When it doesn't match
 			   {
-				   System.out.println("You've reached the else");
+				   current = current.next; // navigate
+				   future = future.next; // navigate
 			   }
-			   list = list.next; // navigate
-			   future = future.next; // navigate
+
 		   }
-		   
+		   // When magazine isn't found
+		   System.out.println("Entered magazine doesn't exist");
 	   }
    }
    
    public void deleteAll()
    {
-	   // step 2
-	   list = null; // not tested but should work
+	   list = null;
    }
 
    //----------------------------------------------------------------

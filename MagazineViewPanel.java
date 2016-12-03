@@ -42,6 +42,8 @@ public class MagazineViewPanel extends JPanel
 		insertButton.addActionListener(new InsertButtonListener());
 		deleteButton.addActionListener(new DeleteButtonListener());
 		deleteAllButton.addActionListener(new DeleteAllButtonListener());
+		addTextField.addKeyListener(new AddButtonKeyListener());
+		deleteTextField.addKeyListener(new DeleteButtonKeyListener());
 		
 		textArea.setEditable(false);
 		
@@ -100,5 +102,39 @@ public class MagazineViewPanel extends JPanel
 			list.deleteAll();
 			update();
 		}
+	}
+	private class AddButtonKeyListener implements KeyListener
+	{
+		public void keyPressed(KeyEvent e) 
+		{
+			if(e.getKeyCode() == KeyEvent.VK_ENTER)
+			{
+				list.add(new Magazine(addTextField.getText()));
+				addTextField.setText(null);  // clears text area
+				addTextField.grabFocus();  // stay on text area
+				update();
+			}
+		}
+		@Override
+		public void keyReleased(KeyEvent arg0) {}
+		@Override
+		public void keyTyped(KeyEvent e) {}
+	}
+	private class DeleteButtonKeyListener implements KeyListener
+	{
+		public void keyPressed(KeyEvent e) 
+		{
+			if(e.getKeyCode() == KeyEvent.VK_ENTER)
+			{
+				list.delete(new Magazine(deleteTextField.getText()));
+				deleteTextField.setText(null);  // clears text area
+				deleteTextField.grabFocus();  //  stay on text area
+				update();
+			}
+		}
+		@Override
+		public void keyReleased(KeyEvent arg0) {}
+		@Override
+		public void keyTyped(KeyEvent e) {}
 	}
 }
