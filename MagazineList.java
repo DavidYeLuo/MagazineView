@@ -1,8 +1,9 @@
-//*******************************************************************
-//  MagazineList.java       Author: Lewis/Loftus
-//
-//  Represents a collection of magazines.
-//*******************************************************************
+/**
+ * MagazineList --- Represents a collection of magazine.
+ * @author          David Ye Luo, Kenta Medina
+ * @version         1.0
+ * @since           2016-12-3
+ */
 public class MagazineList
 {
    private MagazineNode list;
@@ -35,6 +36,9 @@ public class MagazineList
       }
    }
    
+   //----------------------------------------------------------------
+   //  Adds the desired magazine starting at the begining of the list
+   //----------------------------------------------------------------
    public void insert(Magazine m)
    {
 	   MagazineNode copy = list;
@@ -42,6 +46,9 @@ public class MagazineList
 	   list.next = copy;
    }
    
+   //----------------------------------------------------------------
+   //  Extra Credit: Delete a certain magazine
+   //----------------------------------------------------------------
    public void delete(Magazine m)
    {
 	   if(list == null)
@@ -52,6 +59,7 @@ public class MagazineList
 	   {
 		   MagazineNode current = list;
 		   MagazineNode future = list.next;
+		   
 		   // When the head node should be deleted
 		   if(current.magazine.equals(m))  
 		   {
@@ -78,6 +86,9 @@ public class MagazineList
 	   }
    }
    
+   //----------------------------------------------------------------
+   //  Clears the whole list
+   //----------------------------------------------------------------
    public void deleteAll()
    {
 	   list = null;

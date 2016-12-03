@@ -1,9 +1,9 @@
-//********************************************************************
-//  Magazine.java       Author: Lewis/Loftus
-//
-//  Represents a single magazine.
-//********************************************************************
-
+/**
+ * Magazine --- Represents a single magazine.
+ * @author      David Ye Luo, Kenta Medina
+ * @version     1.0
+ * @since       2016-12-3
+ */
 public class Magazine 
 {
    private String title;
@@ -16,6 +16,9 @@ public class Magazine
       title = newTitle;
    }
    
+   //-----------------------------------------------------------------
+   //  Checks whether the magazine is identical
+   //-----------------------------------------------------------------
    public boolean equals(Magazine m)
    {
 	   return this.title.equals(m.toString());
