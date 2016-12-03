@@ -40,10 +40,42 @@ public class MagazineList
    public void insert(Magazine m)
    {
 	   // step 1
-	   // not tested
 	   MagazineNode copy = list;
 	   list = new MagazineNode(m);
 	   list.next = copy;
+   }
+   
+   public void delete(Magazine m)
+   {
+	   System.out.println("Delete pressed");
+	   if(list == null)
+	   {
+		   System.out.println("Magazine is empty");
+	   }
+	   else
+	   { // problem trying to figure out how to delete
+		   MagazineNode current = list;
+		   MagazineNode future = list.next;
+		   if(current.magazine.equals(m))
+		   {
+			   list = current.next;
+			   return;
+		   }
+		   while(future != null)
+		   {
+			   if(future.magazine.equals(m))
+			   {
+				   current.next = future.next;
+			   }
+			   else 
+			   {
+				   System.out.println("You've reached the else");
+			   }
+			   list = list.next; // navigate
+			   future = future.next; // navigate
+		   }
+		   
+	   }
    }
    
    public void deleteAll()

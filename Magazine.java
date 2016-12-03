@@ -15,6 +15,11 @@ public class Magazine
    {    
       title = newTitle;
    }
+   
+   public boolean equals(Magazine m)
+   {
+	   return this.title.equals(m.toString());
+   }
 
    //-----------------------------------------------------------------
    //  Returns this magazine as a string.
