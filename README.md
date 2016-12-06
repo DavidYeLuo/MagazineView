@@ -47,3 +47,7 @@ Here are some additional design thoughts:
 
 
 10) You must separate your implementation so that the Magazine and MagazineList classes are in separate file(s) from the MagazineView and MagazineViewPanel files that you use to implement your program.
+
+Extra Credit:
+
+Provide a ‘Delete Magazine’ TextField where a user can enter a Magazine to be deleted from the Magazine list. The program will search for that magazine title and remove it from the list. Put this code into a method named delete() and add the method to the MagazineList class.
